@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<template
+    format="3"
+    revision="2"
+    name="Android Asynchronous Http Client List Activity"
+    description="Creates a new Listview Activity to Access Data From Internet Using Library http://loopj.com/android-async-http/"
+    minApi="3"
+    minBuildApi="13">
+    <dependency name="android-support-v4" revision="8" />
+
+    <category value="Activities" />
+
+    <parameter
+        id="activityClass"
+        name="Activity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="AsyncHttpActivity"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_login"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="activityTitle"
+        name="Title"
+        type="string"
+        constraints="nonempty"
+        default="Sign in"
+        help="The name of the activity." />
+    
+     <parameter
+        id="nameUrl"
+        name="URL"
+        type="string"
+        constraints="nonempty"
+        default="https://api.twitter.com/1/statuses/user_timeline/septiyan_andika.json"
+        help="The name of URL API" />
+
+    <parameter
+        id="parentActivityClass"
+        name="Hierarchical Parent"
+        type="string"
+        constraints="activity|exists|empty"
+        default=""
+        help="The hierarchical parent activity, used to provide a default implementation for the 'Up' button" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+   
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
