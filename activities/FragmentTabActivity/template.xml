@@ -2,8 +2,8 @@
 <template
     format="3"
     revision="2"
-    name="Android Asynchronous Http Client List Activity"
-    description="Creates a new Listview Activity to Access Data From Internet Using Library http://loopj.com/android-async-http/"
+    name="Frgament Tab Activity"
+    description="Create New Tab Fragment "
     minApi="3"
     minBuildApi="13">
     <dependency name="android-support-v4" revision="8" />
@@ -15,7 +15,7 @@
         name="Activity Name"
         type="string"
         constraints="class|unique|nonempty"
-        default="AsyncHttpActivity"
+        default="TabFragmentActivity"
         help="The name of the activity class to create" />
 
     <parameter
@@ -24,7 +24,7 @@
         type="string"
         constraints="layout|unique|nonempty"
         suggest="${activityToLayout(activityClass)}"
-        default="activity_login"
+        default="activity_tabfragment"
         help="The name of the layout to create for the activity" />
 
     <parameter
@@ -32,16 +32,9 @@
         name="Title"
         type="string"
         constraints="nonempty"
-        default="Asynchronous Http Client Activity"
+        default="Tab With Frgamnet"
         help="The name of the activity." />
     
-     <parameter
-        id="nameUrl"
-        name="URL"
-        type="string"
-        constraints="nonempty"
-        default="https://api.twitter.com/1/statuses/user_timeline/septiyan_andika.json"
-        help="The name of URL API" />
 
     <parameter
         id="parentActivityClass"
@@ -57,8 +50,6 @@
         type="string"
         constraints="package"
         default="com.mycompany.myapp" />
-
-   
 
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
